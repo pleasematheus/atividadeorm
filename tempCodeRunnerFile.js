@@ -1,0 +1,1 @@
+this.dados.find(item => item.id === id)
