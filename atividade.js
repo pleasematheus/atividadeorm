@@ -67,13 +67,13 @@ class ModeloFilho extends ORM {
 ModeloFilho.criar({ id: 1, nome: "Item 1" })
 ModeloFilho.criar({ id: 2, nome: "Item 2" })
 
-// console.table(ModeloFilho.listarTodos())
+console.table(ModeloFilho.listarTodos())
 
-// console.table(ModeloFilho.ler(1))
+console.table(ModeloFilho.ler(1))
 
-// ModeloFilho.atualizar(2, { nome: "Item 2 Atualizado" })
-// console.table(ModeloFilho.ler(2))
+ModeloFilho.atualizar(2, { nome: "Item 2 Atualizado" })
+console.table(ModeloFilho.ler(2))
 
 ModeloFilho.excluir(1)
-console.table(ModeloFilho.ler(1))
-// console.table(ModeloFilho.listarTodos())
+ModeloFilho.ler(1)
+console.table(ModeloFilho.listarTodos())
