@@ -22,11 +22,9 @@ class ORM{
     const item = this.dados.find(item => item.id === id);
     if (item === undefined) {
       return console.log(`Item com ID ${id} não encontrado.`);
-      // Retorna null ou outra valor apropriado se o item não for encontrado
     }
-    return item; // Retorna o item encontrado
+    return console.table(item)
   }
-
 
   static atualizar(id, novosDados) {
     this.dados ||= []
@@ -56,7 +54,7 @@ class ORM{
 
   static listarTodos() {
     this.dados ||= []
-    return this.dados
+    return console.table(this.dados)
   }
 }
 
@@ -67,13 +65,13 @@ class ModeloFilho extends ORM {
 ModeloFilho.criar({ id: 1, nome: "Item 1" })
 ModeloFilho.criar({ id: 2, nome: "Item 2" })
 
-console.table(ModeloFilho.listarTodos())
+ModeloFilho.listarTodos()
 
-console.table(ModeloFilho.ler(1))
+ModeloFilho.ler(1)
 
 ModeloFilho.atualizar(2, { nome: "Item 2 Atualizado" })
-console.table(ModeloFilho.ler(2))
+ModeloFilho.ler(2)
 
 ModeloFilho.excluir(1)
 ModeloFilho.ler(1)
-console.table(ModeloFilho.listarTodos())
+ModeloFilho.listarTodos()
